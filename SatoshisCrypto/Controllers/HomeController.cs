@@ -1,38 +1,14 @@
-﻿// using System;
-// using System.Collections.Generic;
-// using System.Diagnostics;
-// using System.Linq;
-// using System.Threading.Tasks;
-// using Microsoft.AspNetCore.Mvc;
-// using Microsoft.Extensions.Logging;
-// using SatoshisCrypto.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using SatoshisCrypto.Models;
 
-// namespace SatoshisCrypto.Controllers
-// {
-//     public class HomeController : Controller
-//     {
-//         private readonly ILogger<HomeController> _logger;
-
-//         public HomeController(ILogger<HomeController> logger)
-//         {
-//             _logger = logger;
-//         }
-
-//         public IActionResult Index()
-//         {
-//             var allComments = Comment.GetComments();
-//             return View(allComments);
-//         }
-
-//         public IActionResult Privacy()
-//         {
-//             return View();
-//         }
-
-//         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-//         public IActionResult Error()
-//         {
-//             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-//         }
-//     }
-// }
+namespace SatoshisCrypto.Controllers
+{
+  public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
+            var allComments = Comment.GetComments();
+            return View(allComments);
+        }
+    }
+}

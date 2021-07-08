@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/KarlDrendel/Desktop/SatoshisCryptoMVC.Solution/SatoshisCrypto/SatoshisCrypto.csproj": {}
+    "/Users/laysif/Epicodus/MVC/TodoList/Deleting Files/Satoshis-Crypto/SatoshisCrypto/SatoshisCrypto.csproj": {}
   },
   "projects": {
-    "/Users/KarlDrendel/Desktop/SatoshisCryptoMVC.Solution/SatoshisCrypto/SatoshisCrypto.csproj": {
+    "/Users/laysif/Epicodus/MVC/TodoList/Deleting Files/Satoshis-Crypto/SatoshisCrypto/SatoshisCrypto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/KarlDrendel/Desktop/SatoshisCryptoMVC.Solution/SatoshisCrypto/SatoshisCrypto.csproj",
+        "projectUniqueName": "/Users/laysif/Epicodus/MVC/TodoList/Deleting Files/Satoshis-Crypto/SatoshisCrypto/SatoshisCrypto.csproj",
         "projectName": "SatoshisCrypto",
-        "projectPath": "/Users/KarlDrendel/Desktop/SatoshisCryptoMVC.Solution/SatoshisCrypto/SatoshisCrypto.csproj",
-        "packagesPath": "/Users/KarlDrendel/.nuget/packages/",
-        "outputPath": "/Users/KarlDrendel/Desktop/SatoshisCryptoMVC.Solution/SatoshisCrypto/obj/",
+        "projectPath": "/Users/laysif/Epicodus/MVC/TodoList/Deleting Files/Satoshis-Crypto/SatoshisCrypto/SatoshisCrypto.csproj",
+        "packagesPath": "/Users/laysif/.nuget/packages/",
+        "outputPath": "/Users/laysif/Epicodus/MVC/TodoList/Deleting Files/Satoshis-Crypto/SatoshisCrypto/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/KarlDrendel/.nuget/NuGet/NuGet.Config"
+          "/Users/laysif/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
