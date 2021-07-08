@@ -9,6 +9,8 @@ namespace SatoshisCrypto.Models
   {
     public string Body { get; set; }
     public int Created_Utc { get; set; }
+    public int CommentId { get; set; }
+
 
     public static List<Comment> GetComments() //this is where the function that makes our API call is written. It refers to API helper for the actual API endpoint
     {

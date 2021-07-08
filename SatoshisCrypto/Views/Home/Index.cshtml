@@ -7,13 +7,13 @@
     <h1 class="display-4">All Comments:</h1>
 </div>
 
-<h1>All Comments:</h1>
-
 <ol>
 @foreach (Comment comment in Model)
 {
     <ul>
         <li>Body: @comment.Body</li>
+        <li>UTC: @comment.Created_Utc</li>
+        <li>
    
     </ul>
     <br>
