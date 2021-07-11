@@ -9,8 +9,8 @@ using SatoshisCrypto.Models;
 namespace SatoshisCrypto.Migrations
 {
     [DbContext(typeof(SatoshisCryptoContext))]
-    [Migration("20210708033832_second")]
-    partial class second
+    [Migration("20210708074735_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

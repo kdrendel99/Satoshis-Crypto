@@ -32,6 +32,9 @@ namespace SatoshisCrypto.Migrations
                     b.Property<int>("Created_Utc")
                         .HasColumnType("int");
 
+                    b.Property<string>("id")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.HasKey("CommentId");
 
                     b.HasIndex("CommentId1");
