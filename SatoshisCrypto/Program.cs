@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
+using SatoshisCrypto.Models;
 
 namespace SatoshisCrypto
 {
@@ -22,5 +26,7 @@ namespace SatoshisCrypto
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
     }
+
 }

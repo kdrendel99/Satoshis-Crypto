@@ -1,37 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using SatoshisCrypto.Models;
 
 namespace SatoshisCrypto.Controllers
 {
-    public class HomeController : Controller
+  public class HomeController : Controller
+  {
+    private readonly SatoshisCryptoContext _db;
+    public HomeController(SatoshisCryptoContext db)
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+      _db = db;
     }
+
+    public IActionResult Index()
+    {
+
+      var allComments = Comment.GetComments();
+      // var get8hrComments = Comment.GetComments4hr();
+      // var get4hrComments = Comment.GetComments8hr();
+      // var allComments = get8hrComments.Concat(get4hrComments).ToList();
+
+
+      _db.Comments.AddRange(allComments);
+      _db.SaveChanges();
+
+      return View(allComments);
+
+    }
+  }
 }

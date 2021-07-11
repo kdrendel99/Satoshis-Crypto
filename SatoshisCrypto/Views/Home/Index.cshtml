@@ -1,8 +1,19 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
+@using SatoshisCrypto.Models;
+@model List<SatoshisCrypto.Models.Comment>;
+
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">All Comments:</h1>
 </div>
+
+<ol>
+@foreach (Comment comment in Model)
+{
+    <ul>
+        <li>Body: @comment.Body</li>
+        <li>UTC: @comment.Created_Utc</li>
+    </ul>
+    <br>
+}
+</ol>
