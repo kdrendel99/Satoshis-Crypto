@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "/Users/laysif/.dotnet/store/|arch|/|tfm|",
-      "/Users/laysif/.nuget/packages"
-    ]
-  }
-}
