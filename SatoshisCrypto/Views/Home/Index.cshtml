@@ -1,6 +1,6 @@
 ﻿
 @using SatoshisCrypto.Models;
-@model List<SatoshisCrypto.Models.Comment>;
+@model List<SatoshisCrypto.Models.EthComment>;
 
 
 <div class="text-center">
@@ -8,7 +8,7 @@
 </div>
 
 <ol>
-@foreach (Comment comment in Model)
+@foreach (EthComment comment in Model)
 {
     <ul>
         <li>Body: @comment.Body</li>
