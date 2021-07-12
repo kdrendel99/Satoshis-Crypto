@@ -9,6 +9,9 @@ namespace SatoshisCrypto.Models
             : base(options)
         {
         }
-        public DbSet<Comment> Comments { get; set; }
+        public DbSet<BtcComment> BtcComments { get; set; }
+        public DbSet<EthComment> EthComments { get; set; }
+
+        public DbSet<AdaComment> AdaComments { get; set; }
     }
 }
