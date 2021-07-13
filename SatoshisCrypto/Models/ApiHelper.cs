@@ -151,6 +151,105 @@ namespace SatoshisCrypto.Models
       return response.Content;
     }
 
+        public static async Task<string> GetAllLink4hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"reddit/comment/search/?q=link&subreddit=cryptocurrency&after=60h&before=56h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+
+      return response.Content;
+    }
+    public static async Task<string> GetAllLink8hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"/reddit/comment/search/?q=link&subreddit=cryptocurrency&after=64h&before=60h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
+
+    public static async Task<string> GetAllLink12hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"/reddit/comment/search/?q=link&subreddit=cryptocurrency&after=68h&before=64h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+
+      return response.Content;
+    }
+    public static async Task<string> GetAllLink16hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"/reddit/comment/search/?q=link&subreddit=cryptocurrency&after=72h&before=68h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+
+      return response.Content;
+    }
+    public static async Task<string> GetAllLink20hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"/reddit/comment/search/?q=link&subreddit=cryptocurrency&after=76h&before=72h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+
+      return response.Content;
+    }
+    public static async Task<string> GetAllLink24hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"/reddit/comment/search/?q=link&subreddit=cryptocurrency&after=80h&before=76h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+
+      return response.Content;
+    }
+
+
+            public static async Task<string> GetAllDoge4hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"reddit/comment/search/?q=doge&subreddit=cryptocurrency&after=60h&before=56h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+
+      return response.Content;
+    }
+    public static async Task<string> GetAllDoge8hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"/reddit/comment/search/?q=doge&subreddit=cryptocurrency&after=64h&before=60h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
+
+    public static async Task<string> GetAllDoge12hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"/reddit/comment/search/?q=doge&subreddit=cryptocurrency&after=68h&before=64h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+
+      return response.Content;
+    }
+    public static async Task<string> GetAllDoge16hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"/reddit/comment/search/?q=doge&subreddit=cryptocurrency&after=72h&before=68h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+
+      return response.Content;
+    }
+    public static async Task<string> GetAllDoge20hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"/reddit/comment/search/?q=doge&subreddit=cryptocurrency&after=76h&before=72h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+
+      return response.Content;
+    }
+    public static async Task<string> GetAllDoge24hr()
+    {
+      RestClient client = new RestClient("https://api.pushshift.io");
+      RestRequest request = new RestRequest($"/reddit/comment/search/?q=doge&subreddit=cryptocurrency&after=80h&before=76h&size=100", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+
+      return response.Content;
+    }
+
   }
 
 }

@@ -49,6 +49,27 @@ namespace SatoshisCrypto.Controllers
       _db.AdaComments.AddRange(allAdaComments);
       _db.SaveChanges();
 
+      var link4hrComments = LinkComment.GetLinkComments4hr();
+      var link8hrComments = LinkComment.GetLinkComments8hr();
+      var link12hrComments = LinkComment.GetLinkComments8hr();
+      var link16hrComments = LinkComment.GetLinkComments16hr();
+      var link20hrComments = LinkComment.GetLinkComments20hr();
+      var link24hrComments = LinkComment.GetLinkComments24hr();
+      var allLinkComments = link4hrComments.Concat(link8hrComments).Concat(link12hrComments).Concat(link16hrComments).Concat(link20hrComments).Concat(link24hrComments).ToList();
+
+      _db.LinkComments.AddRange(allLinkComments);
+      _db.SaveChanges();
+      
+      var doge4hrComments = DogeComment.GetDogeComments4hr();
+      var doge8hrComments = DogeComment.GetDogeComments8hr();
+      var doge12hrComments = DogeComment.GetDogeComments8hr();
+      var doge16hrComments = DogeComment.GetDogeComments16hr();
+      var doge20hrComments = DogeComment.GetDogeComments20hr();
+      var doge24hrComments = DogeComment.GetDogeComments24hr();
+      var allDogeComments = doge4hrComments.Concat(doge8hrComments).Concat(doge12hrComments).Concat(doge16hrComments).Concat(doge20hrComments).Concat(doge24hrComments).ToList();
+
+      _db.DogeComments.AddRange(allDogeComments);
+      _db.SaveChanges();
 
 
 
@@ -68,6 +89,15 @@ namespace SatoshisCrypto.Controllers
                             .Distinct()
                             .Count();
 
+      var linkQuery = _db.LinkComments.AsQueryable();                     
+      var linkCountDistinct = linkQuery.Select(c => c.id)
+                            .Distinct()
+                            .Count();
+
+      var dogeQuery = _db.DogeComments.AsQueryable();                     
+      var dogeCountDistinct = dogeQuery.Select(c => c.id)
+                            .Distinct()
+                            .Count();                            
 
       return View(allEthComments);
 
