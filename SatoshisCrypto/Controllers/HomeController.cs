@@ -12,10 +12,13 @@ namespace SatoshisCrypto.Controllers
     {
       _db = db;
     }
-
     public IActionResult Index()
     {
 
+      return View();
+    }
+    public IActionResult Details()
+    {
       var get4hrComments = BtcComment.GetBtcComments4hr();
       var get8hrComments = BtcComment.GetBtcComments8hr();
       var get12hrComments = BtcComment.GetBtcComments12hr();
@@ -68,10 +71,15 @@ namespace SatoshisCrypto.Controllers
                             .Distinct()
                             .Count();
 
+      // ViewBag.finalCount = dogeCountDistinct;
+      ViewBag.finalCount2 = adaCountDistinct;
+      // ViewBag.finalCount3 = linkCountDistinct;
+      ViewBag.finalCount4 = ethCountDistinct;
+      ViewBag.finalCount5 = btcCountDistinct;
 
       return View(allEthComments);
 
-
     }
+
   }
 }

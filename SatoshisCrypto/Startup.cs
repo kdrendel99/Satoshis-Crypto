@@ -35,6 +35,7 @@ namespace SatoshisCrypto
             }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
             app.UseRouting();
 
