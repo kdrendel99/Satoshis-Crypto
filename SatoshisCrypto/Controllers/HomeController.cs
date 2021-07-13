@@ -77,7 +77,13 @@ namespace SatoshisCrypto.Controllers
       ViewBag.finalCount4 = ethCountDistinct;
       ViewBag.finalCount5 = btcCountDistinct;
 
-      return View(allEthComments);
+      List<int> sortedCommentList = new List<int>{};
+      sortedCommentList.Add(btcCountDistinct);
+      sortedCommentList.Add(ethCountDistinct);
+      sortedCommentList.Add(adaCountDistinct);
+      // sortedCommentList.Add(linkCountDistinct);
+      // sortedCommentList.Add(dogeCountDistinct);
+      return View(sortedCommentList);
 
     }
 
