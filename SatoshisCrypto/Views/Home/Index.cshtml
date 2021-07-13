@@ -1,19 +1,13 @@
-﻿
-@using SatoshisCrypto.Models;
-@model List<SatoshisCrypto.Models.EthComment>;
-
+@{
+    ViewData["Title"] = "Home Page";
+}
 
 <div class="text-center">
-    <h1 class="display-4">All Comments:</h1>
+    <h1 class="display-4">Welcome to Satoshi's Crypto.</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">the most popular cryptocurrencies trending on Reddit!</a>.</p>
 </div>
 
-<ol>
-@foreach (EthComment comment in Model)
-{
-    <ul>
-        <li>Body: @comment.Body</li>
-        <li>UTC: @comment.Created_Utc</li>
-    </ul>
-    <br>
-}
-</ol>
+<a href="/Home/Details" button type="button" class="btn btn-danger">Go!</a>
+
+
+      
