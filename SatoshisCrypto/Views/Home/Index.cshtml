@@ -1,19 +1,18 @@
-﻿
-@using SatoshisCrypto.Models;
-@model List<SatoshisCrypto.Models.EthComment>;
-
+﻿@using SatoshisCrypto.Models;
 
 <div class="text-center">
     <h1 class="display-4">All Comments:</h1>
 </div>
 
-<ol>
-@foreach (EthComment comment in Model)
+@*foreach(var i in @ViewBag.finalList)
+
 {
-    <ul>
-        <li>Body: @comment.Body</li>
-        <li>UTC: @comment.Created_Utc</li>
-    </ul>
-    <br>
+    <p>i</p>
 }
-</ol>
+*@
+
+<p>DOGE: @ViewBag.finalCount</p>  
+<p>ADA: @ViewBag.finalCount2</p> 
+<p>LINK: @ViewBag.finalCount3</p> 
+<p>ETH: @ViewBag.finalCount4</p> 
+<p>BTC: @ViewBag.finalCount5</p>  
