@@ -15,7 +15,7 @@ namespace SatoshisCrypto.Models
     public string id { get; set; }
     public List<EthComment> EthComments { get; set; }
 
-    public static List<EthComment> GetEthComments4hr() //this is where the function that makes our API call is written. It refers to API helper for the actual API endpoint
+    public static List<EthComment> GetEthComments4hr() 
     {
       var apiCallTask = ApiHelper.GetAllEth4hr();
       var result = apiCallTask.Result;
@@ -23,7 +23,7 @@ namespace SatoshisCrypto.Models
       List<EthComment> EthCommentList = JsonConvert.DeserializeObject<List<EthComment>>(jsonResponse["data"].ToString());
       return EthCommentList;
     }
-    public static List<EthComment> GetEthComments8hr() //this is where the function that makes our API call is written. It refers to API helper for the actual API endpoint
+    public static List<EthComment> GetEthComments8hr() 
 
     {
       var apiCallTask = ApiHelper.GetAllEth8hr();
@@ -32,7 +32,7 @@ namespace SatoshisCrypto.Models
       List<EthComment> EthCommentList = JsonConvert.DeserializeObject<List<EthComment>>(jsonResponse["data"].ToString());
       return EthCommentList;
     }
-    public static List<EthComment> GetEthComments12hr() //this is where the function that makes our API call is written. It refers to API helper for the actual API endpoint
+    public static List<EthComment> GetEthComments12hr()
 
     {
       var apiCallTask = ApiHelper.GetAllEth12hr();
@@ -41,7 +41,7 @@ namespace SatoshisCrypto.Models
       List<EthComment> EthCommentList = JsonConvert.DeserializeObject<List<EthComment>>(jsonResponse["data"].ToString());
       return EthCommentList;
     }
-    public static List<EthComment> GetEthComments16hr() //this is where the function that makes our API call is written. It refers to API helper for the actual API endpoint
+    public static List<EthComment> GetEthComments16hr() 
 
     {
       var apiCallTask = ApiHelper.GetAllEth16hr();
@@ -50,7 +50,7 @@ namespace SatoshisCrypto.Models
       List<EthComment> EthCommentList = JsonConvert.DeserializeObject<List<EthComment>>(jsonResponse["data"].ToString());
       return EthCommentList;
     }
-    public static List<EthComment> GetEthComments20hr() //this is where the function that makes our API call is written. It refers to API helper for the actual API endpoint
+    public static List<EthComment> GetEthComments20hr() 
 
     {
       var apiCallTask = ApiHelper.GetAllEth20hr();
@@ -59,7 +59,7 @@ namespace SatoshisCrypto.Models
       List<EthComment> EthCommentList = JsonConvert.DeserializeObject<List<EthComment>>(jsonResponse["data"].ToString());
       return EthCommentList;
     }
-    public static List<EthComment> GetEthComments24hr() //this is where the function that makes our API call is written. It refers to API helper for the actual API endpoint
+    public static List<EthComment> GetEthComments24hr() 
 
     {
       var apiCallTask = ApiHelper.GetAllEth24hr();

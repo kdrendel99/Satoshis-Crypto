@@ -67,6 +67,31 @@ namespace SatoshisCrypto.Migrations
                     b.ToTable("BtcComments");
                 });
 
+            modelBuilder.Entity("SatoshisCrypto.Models.DogeComment", b =>
+                {
+                    b.Property<int>("DogeCommentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Body")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("Created_Utc")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("DogeCommentId1")
+                        .HasColumnType("int");
+
+                    b.Property<string>("id")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("DogeCommentId");
+
+                    b.HasIndex("DogeCommentId1");
+
+                    b.ToTable("DogeComments");
+                });
+
             modelBuilder.Entity("SatoshisCrypto.Models.EthComment", b =>
                 {
                     b.Property<int>("EthCommentId")
@@ -92,6 +117,31 @@ namespace SatoshisCrypto.Migrations
                     b.ToTable("EthComments");
                 });
 
+            modelBuilder.Entity("SatoshisCrypto.Models.LinkComment", b =>
+                {
+                    b.Property<int>("LinkCommentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Body")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("Created_Utc")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LinkCommentId1")
+                        .HasColumnType("int");
+
+                    b.Property<string>("id")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("LinkCommentId");
+
+                    b.HasIndex("LinkCommentId1");
+
+                    b.ToTable("LinkComments");
+                });
+
             modelBuilder.Entity("SatoshisCrypto.Models.AdaComment", b =>
                 {
                     b.HasOne("SatoshisCrypto.Models.AdaComment", null)
@@ -106,11 +156,25 @@ namespace SatoshisCrypto.Migrations
                         .HasForeignKey("BtcCommentId1");
                 });
 
+            modelBuilder.Entity("SatoshisCrypto.Models.DogeComment", b =>
+                {
+                    b.HasOne("SatoshisCrypto.Models.DogeComment", null)
+                        .WithMany("DogeComments")
+                        .HasForeignKey("DogeCommentId1");
+                });
+
             modelBuilder.Entity("SatoshisCrypto.Models.EthComment", b =>
                 {
                     b.HasOne("SatoshisCrypto.Models.EthComment", null)
                         .WithMany("EthComments")
                         .HasForeignKey("EthCommentId1");
+                });
+
+            modelBuilder.Entity("SatoshisCrypto.Models.LinkComment", b =>
+                {
+                    b.HasOne("SatoshisCrypto.Models.LinkComment", null)
+                        .WithMany("LinkComments")
+                        .HasForeignKey("LinkCommentId1");
                 });
 
             modelBuilder.Entity("SatoshisCrypto.Models.AdaComment", b =>
@@ -123,9 +187,19 @@ namespace SatoshisCrypto.Migrations
                     b.Navigation("BtcComments");
                 });
 
+            modelBuilder.Entity("SatoshisCrypto.Models.DogeComment", b =>
+                {
+                    b.Navigation("DogeComments");
+                });
+
             modelBuilder.Entity("SatoshisCrypto.Models.EthComment", b =>
                 {
                     b.Navigation("EthComments");
+                });
+
+            modelBuilder.Entity("SatoshisCrypto.Models.LinkComment", b =>
+                {
+                    b.Navigation("LinkComments");
                 });
 #pragma warning restore 612, 618
         }
