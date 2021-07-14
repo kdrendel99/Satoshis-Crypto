@@ -36,8 +36,9 @@ a {
 -------------------------------------------------- */
 html {
   font-size: 14px;
+
 } 
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   html {
     font-size: 16px;
   }
@@ -58,15 +59,16 @@ body {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-.btn-secondary {
+.btn-danger {
   height: 300px;
   width: 300px;
   border-radius: 50%;
-  border: 1px solid orange;
-  font-size: 180px;
-  background-color:red;
+  border: 1px solid black;
+  font-size: 164px;
+  background-color:slategray;
   text-align: center;
   margin-left: 360px;
+  padding-top: 50px;
 }
 
 button.accept-policy {
@@ -74,7 +76,7 @@ button.accept-policy {
   line-height: inherit;
 }
 
--------------------------------------------------- */
+/*-------------------------------------------------- */
 
 html {
   position: relative;
@@ -83,8 +85,12 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+
 }
+
+/* .header {
+  background-color: whitesmoke;
+} */
 
 .footer {
   position: absolute;

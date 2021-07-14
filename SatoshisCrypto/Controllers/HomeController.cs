@@ -103,8 +103,8 @@ namespace SatoshisCrypto.Controllers
                             .Distinct()
                             .Count();  
 
-
       SortedList<int, string> commentScorecard = new SortedList<int, string> {};
+      commentScorecard.Clear();
       commentScorecard.Add(btcCountDistinct, "BTC"); 
       commentScorecard.Add(ethCountDistinct, "ETH"); 
       commentScorecard.Add(adaCountDistinct, "ADA"); 
