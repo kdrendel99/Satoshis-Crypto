@@ -1,5 +1,5 @@
 <p align="center"> 
-  <img src="wwwroot/img/crypto.jpeg" alt="pic of bitcoins.jpeg" width="240px" height="px">
+  <img src="https://saoud.dev/imgs/crypto.jpeg" alt="pic of bitcoins.jpeg" width="240px" height="px">
 </p>
 <h1 align="center"> Satoshi's Crypto </h1>
 <h3 align="center"> Epicodus - January PT Cohort </h3>
