@@ -13,8 +13,12 @@ namespace SatoshisCrypto.Controllers
     {
       _db = db;
     }
-
     public IActionResult Index()
+    {
+
+      return View();
+    }
+    public IActionResult Details()
     {
 
       // var get4hrComments = BtcComment.GetBtcComments4hr();
@@ -126,7 +130,7 @@ namespace SatoshisCrypto.Controllers
       ViewBag.finalCount4 = ethCountDistinct;
       ViewBag.finalCount5 = btcCountDistinct;
  
-      return View();
+      return View(sortedCommentList);
 
     }
   }
