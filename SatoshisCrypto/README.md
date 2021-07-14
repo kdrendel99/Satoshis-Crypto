@@ -11,6 +11,8 @@
 
 <p>This C# MVC API application will scrape the subreddit <a href="https://www.reddit.com/r/CryptoCurrency/"> r/crytocurrency</a> for mentions of ADA, ETH, BTC, LINK and DOGE in order to inform users what are the most talked about coins in the past 24 hours. </p>
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
 ## Technologies Used
 
 * Git
