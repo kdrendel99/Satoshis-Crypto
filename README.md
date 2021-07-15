@@ -29,7 +29,7 @@
 
 ## Known Bugs
 
-* Our SortedList for CommentScorecard does not allow duplicate keys, therefore if you run the api calls multiple times in a short amount of time there is risk of the application not running correctly. 
+* The max results returned for any crypto in a 24 hour period is 600.  If there are multiple crypto currencies that return 600, our sortedlist will not work
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
