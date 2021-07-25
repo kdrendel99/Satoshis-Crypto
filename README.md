@@ -90,6 +90,7 @@ MySQL is a type of database software used to create, edit, query, and manage SQL
 
 - Navigate to the `SatoshisCrypto` folder in the command line
 - Use the command `dotnet build` to compile
+- Use the command `dotnet run` to run the application
 
 ##### Installing Packages
 
