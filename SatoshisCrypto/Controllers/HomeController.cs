@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SatoshisCrypto.Models;
+using System;
 
 namespace SatoshisCrypto.Controllers
 {
@@ -19,6 +20,7 @@ namespace SatoshisCrypto.Controllers
     }
     public IActionResult Details()
     {
+
       var get4hrComments = BtcComment.GetBtcComments4hr();
       var get8hrComments = BtcComment.GetBtcComments8hr();
       var get12hrComments = BtcComment.GetBtcComments12hr();
@@ -52,40 +54,68 @@ namespace SatoshisCrypto.Controllers
       _db.AdaComments.AddRange(allAdaComments);
       _db.SaveChanges();
 
+      var link4hrComments = LinkComment.GetLinkComments4hr();
+      var link8hrComments = LinkComment.GetLinkComments8hr();
+      var link12hrComments = LinkComment.GetLinkComments8hr();
+      var link16hrComments = LinkComment.GetLinkComments16hr();
+      var link20hrComments = LinkComment.GetLinkComments20hr();
+      var link24hrComments = LinkComment.GetLinkComments24hr();
+      var allLinkComments = link4hrComments.Concat(link8hrComments).Concat(link12hrComments).Concat(link16hrComments).Concat(link20hrComments).Concat(link24hrComments).ToList();
+
+      _db.LinkComments.AddRange(allLinkComments);
+      _db.SaveChanges();
+      
+      var doge4hrComments = DogeComment.GetDogeComments4hr();
+      var doge8hrComments = DogeComment.GetDogeComments8hr();
+      var doge12hrComments = DogeComment.GetDogeComments8hr();
+      var doge16hrComments = DogeComment.GetDogeComments16hr();
+      var doge20hrComments = DogeComment.GetDogeComments20hr();
+      var doge24hrComments = DogeComment.GetDogeComments24hr();
+      var allDogeComments = doge4hrComments.Concat(doge8hrComments).Concat(doge12hrComments).Concat(doge16hrComments).Concat(doge20hrComments).Concat(doge24hrComments).ToList();
+
+      _db.DogeComments.AddRange(allDogeComments);
+      _db.SaveChanges();
 
 
 
       var btcQuery = _db.BtcComments.AsQueryable();
-
-      var btcCountDistinct = btcQuery.Select(c => c.id)
+      int btcCountDistinct = btcQuery.Select(c => c.id)
                             .Distinct()
                             .Count();
 
       var ethQuery = _db.EthComments.AsQueryable();
-      var ethCountDistinct = ethQuery.Select(c => c.id)
+      int ethCountDistinct = ethQuery.Select(c => c.id)
                             .Distinct()
                             .Count();
 
       var adaQuery = _db.AdaComments.AsQueryable();                     
-      var adaCountDistinct = adaQuery.Select(c => c.id)
+      int adaCountDistinct = adaQuery.Select(c => c.id)
                             .Distinct()
                             .Count();
 
-      // ViewBag.finalCount = dogeCountDistinct;
-      ViewBag.finalCount2 = adaCountDistinct;
-      // ViewBag.finalCount3 = linkCountDistinct;
-      ViewBag.finalCount4 = ethCountDistinct;
-      ViewBag.finalCount5 = btcCountDistinct;
+      var linkQuery = _db.LinkComments.AsQueryable();                     
+      int linkCountDistinct = linkQuery.Select(c => c.id)
+                            .Distinct()
+                            .Count();
 
-      List<int> sortedCommentList = new List<int>{};
-      sortedCommentList.Add(btcCountDistinct);
-      sortedCommentList.Add(ethCountDistinct);
-      sortedCommentList.Add(adaCountDistinct);
-      // sortedCommentList.Add(linkCountDistinct);
-      // sortedCommentList.Add(dogeCountDistinct);
-      return View(sortedCommentList);
+      var dogeQuery = _db.DogeComments.AsQueryable();                     
+      int dogeCountDistinct = dogeQuery.Select(c => c.id)
+                            .Distinct()
+                            .Count();  
+
+      SortedList<int, string> commentScorecard = new SortedList<int, string> {};
+      commentScorecard.Clear();
+      commentScorecard.Add(btcCountDistinct, "BTC"); 
+      commentScorecard.Add(ethCountDistinct, "ETH"); 
+      commentScorecard.Add(adaCountDistinct, "ADA"); 
+      commentScorecard.Add(linkCountDistinct, "LINK"); 
+      commentScorecard.Add(dogeCountDistinct, "DOGE"); 
+
+      var descScorecard = commentScorecard.Reverse();
+
+ 
+      return View(descScorecard);
 
     }
-
   }
 }

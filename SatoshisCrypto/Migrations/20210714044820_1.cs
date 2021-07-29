@@ -2,7 +2,7 @@
 
 namespace SatoshisCrypto.Migrations
 {
-    public partial class Third : Migration
+    public partial class _1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
