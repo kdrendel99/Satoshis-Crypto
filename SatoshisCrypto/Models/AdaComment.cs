@@ -15,59 +15,16 @@ namespace SatoshisCrypto.Models
     public string id { get; set; }
     public List<AdaComment> AdaComments { get; set; }
 
-    public static List<AdaComment> GetAdaComments4hr()
+    public static List<AdaComment> GetAdaComments(string currency, int start)
     {
-      var apiCallTask = ApiHelper.GetAllAda4hr();
+      var apiCallTask = ApiHelper.GetAllForCurrency(currency, start);
       var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      // JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      // List<AdaComment> AdaCommentList = JsonConvert.DeserializeObject<List<AdaComment>>(jsonResponse["data"].ToString());
+      var jsonResponse = JsonConvert.DeserializeObject<dynamic>(result);
       List<AdaComment> AdaCommentList = JsonConvert.DeserializeObject<List<AdaComment>>(jsonResponse["data"].ToString());
       return AdaCommentList;
     }
-    public static List<AdaComment> GetAdaComments8hr() 
-
-    {
-      var apiCallTask = ApiHelper.GetAllAda8hr();
-      var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      List<AdaComment> AdaCommentList = JsonConvert.DeserializeObject<List<AdaComment>>(jsonResponse["data"].ToString());
-      return AdaCommentList;
-    }
-    public static List<AdaComment> GetAdaComments12hr() 
-
-    {
-      var apiCallTask = ApiHelper.GetAllAda12hr();
-      var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      List<AdaComment> AdaCommentList = JsonConvert.DeserializeObject<List<AdaComment>>(jsonResponse["data"].ToString());
-      return AdaCommentList;
-    }
-    public static List<AdaComment> GetAdaComments16hr() 
-
-    {
-      var apiCallTask = ApiHelper.GetAllAda16hr();
-      var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      List<AdaComment> AdaCommentList = JsonConvert.DeserializeObject<List<AdaComment>>(jsonResponse["data"].ToString());
-      return AdaCommentList;
-    }
-    public static List<AdaComment> GetAdaComments20hr()
-
-    {
-      var apiCallTask = ApiHelper.GetAllAda20hr();
-      var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      List<AdaComment> AdaCommentList = JsonConvert.DeserializeObject<List<AdaComment>>(jsonResponse["data"].ToString());
-      return AdaCommentList;
-    }
-    public static List<AdaComment> GetAdaComments24hr() 
-
-    {
-      var apiCallTask = ApiHelper.GetAllAda24hr();
-      var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      List<AdaComment> AdaCommentList = JsonConvert.DeserializeObject<List<AdaComment>>(jsonResponse["data"].ToString());
-      return AdaCommentList;
-    }
-
+    
   }
 }

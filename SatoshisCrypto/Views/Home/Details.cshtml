@@ -2,14 +2,15 @@
 @using System.Collections.Generic;
 
 <div class="text-center">
-    <h2> Below is a list of crypto ticker symbols and their number of mentions on r/cryptocurrency in the last 24 hours</h2>
+    <h1>Here's what we found!</h1>
+    <h4> Below is a list of different cryptocurrencies and their total number of mentions on r/cryptocurrency in the last 24 hours:</h4>
 </div>
 
 
 <div class="text-center">
     @foreach(var i in Model)
     {
-        <h5>@i.Value: @i.Key</h5>
+        <h3>@i.Value: @i.Key</h3>
     }
 </div>
 

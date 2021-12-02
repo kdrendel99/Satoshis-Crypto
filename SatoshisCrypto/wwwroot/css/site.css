@@ -7,13 +7,19 @@ font-family:"ostrich-regular";
 src:url('ostrich-regular.ttf');
 }
 
-/* .rocket{
-  display: none;
-} */
+p {
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.text-center{
+  margin-bottom: 40px;
+  /* border: 5px solid red; */
+}
+
 .loadingScreen{
   display:none;
 }
-
 
 a.navbar-brand {
   white-space:normal;
@@ -59,16 +65,37 @@ body {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-.btn-danger {
+.btn {
   height: 300px;
   width: 300px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid slategray;
+  box-shadow: 5px 15px 25px #a9a9a9;
   font-size: 164px;
-  background-color:slategray;
+  color: black;
+  background: #DADADA;
+  background: -webkit-radial-gradient(center, #DADADA, #717E8E);
+  background: -moz-radial-gradient(center, #DADADA, #717E8E);
+  background: radial-gradient(ellipse at center, #DADADA, #717E8E);
   text-align: center;
-  margin-left: 360px;
-  padding-top: 50px;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}
+
+
+.btn:hover {
+  border: 1px solid white;
+  color: white;
+  background: -webkit-radial-gradient(center, #FFA500, #F7C770);
+  background: -moz-radial-gradient(center, #FFA500, #F7C770);
+  background: radial-gradient(ellipse at center, #FFA500, #F7C770);
+}
+
+.btntext{
+  font-size: 25px;
+  letter-spacing: 3px;
 }
 
 button.accept-policy {
@@ -83,48 +110,60 @@ html {
   min-height: 100%;
 }
 
-body {
-  /* Margin bottom by footer height */
-
-}
-
-/* .header {
-  background-color: whitesmoke;
-} */
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 60px;
   background-color: orange;
 }
 
-/*--------------------ROCKET CSS BELOW-------------------------*/
-.rocket-background {
-  min-height: 100vh;
-  background-color: #000000;
-  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%); 
-  /* background: linear-gradient(to bottom, #b4b2b2 0%, #b4b2b2 70%, #f5f5f5 100%); */
-  overflow: hidden;
+/*--------------------ROCKET CSS-------------------------*/
+
+.row{
+  height: 80vh!important;
 }
 
-.rocket {
-  position: absolute;
-  top: 20%;
-  width: 80px;
-  left: calc(50% - 60px);
+.col {
+  height: 75%;
 }
+
+.loadingtext{
+  text-align: center;
+  width: 100%;
+  height:0%;
+  margin-top: -15%;
+  letter-spacing: 3pt;
+  position:relative;
+  -webkit-animation: loadingTextAnimation 3s infinite;
+  -moz-animation: loadingTextAnimation 3s infinite;
+  -o-animation: loadingTextAnimation 3s infinite;
+  animation: loadingTextAnimation 3s infinite;
+}
+
+
+.rocket-background {
+  height: 100%;
+  aspect-ratio: 1/1;
+  max-width: 700px;
+  background-color: #000000;
+  position: absolute;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%); 
+  border-radius: 50%;
+  box-shadow: 0 30px 40px rgba(0,0,0,.3);
+  overflow: hidden;
+  border: 5px solid orange;
+}
+
 .rocket .rocket-body {
   width: 80px;
-  left: calc(50% - 50px);
   animation: bounce 0.5s infinite;
 }
 .rocket .rocket-body .body {
   background-color: #dadada;
   height: 180px;
-  left: calc(50% - 50px);
   border-top-right-radius: 100%;
   border-top-left-radius: 100%;
   border-bottom-left-radius: 50%;
@@ -148,7 +187,7 @@ body {
   height: 40px;
   border-radius: 100%;
   background-color: orange;
-  left: calc(50% - 25px);
+  left: calc(50% - 20px);
   top: 40px;
   border: 5px solid #b4b2b2;
 }
@@ -172,12 +211,11 @@ body {
   border-bottom-right-radius: 20%;
 }
 .rocket .exhaust-flame {
-  position: absolute;
+  margin-left: 33%!important;
   top: 90%;
   width: 28px;
   background: linear-gradient(to bottom, transparent 10%, #f5f5f5 100%);
   height: 150px;
-  left: calc(50% - 14px);
   animation: exhaust 0.2s infinite;
 }
 .rocket .exhaust-fumes li {
@@ -186,47 +224,48 @@ body {
   background-color: #f5f5f5;
   list-style: none;
   position: absolute;
+  opacity: 100%;
   border-radius: 100%;
 }
 .rocket .exhaust-fumes li:first-child {
   width: 200px;
   height: 200px;
-  bottom: -300px;
+  bottom: 100px;
+  margin-left: -10%!important;
   animation: fumes 5s infinite;
 }
 .rocket .exhaust-fumes li:nth-child(2) {
   width: 150px;
   height: 150px;
-  left: -120px;
-  top: 260px;
+  margin-left: 5%!important;
+  margin-top: 4%!important;
   animation: fumes 3.2s infinite;
 }
 .rocket .exhaust-fumes li:nth-child(3) {
   width: 120px;
   height: 120px;
-  left: -40px;
-  top: 330px;
+  margin-left: 15%!important;
+  margin-top: -1%!important;
   animation: fumes 3s 1s infinite;
 }
 .rocket .exhaust-fumes li:nth-child(4) {
   width: 100px;
   height: 100px;
-  left: -170px;
   animation: fumes 4s 2s infinite;
   top: 380px;
 }
 .rocket .exhaust-fumes li:nth-child(5) {
   width: 130px;
   height: 130px;
-  left: -120px;
-  top: 350px;
+  margin-left: -43%!important;
+  margin-top: -1%!important;
   animation: fumes 5s infinite;
 }
 .rocket .exhaust-fumes li:nth-child(6) {
+  margin-left: -20%!important;
+  margin-top: -8%!important;
   width: 200px;
   height: 200px;
-  left: -60px;
-  top: 280px;
   animation: fumes2 10s infinite;
 }
 .rocket .exhaust-fumes li:nth-child(7) {
@@ -238,14 +277,14 @@ body {
 .rocket .exhaust-fumes li:nth-child(8) {
   width: 110px;
   height: 110px;
-  left: 70px;
-  top: 340px;
+  margin-left: -30%!important;
+  margin-top: 11%!important;
 }
 .rocket .exhaust-fumes li:nth-child(9) {
   width: 90px;
   height: 90px;
-  left: 200px;
-  top: 380px;
+  margin-left: -40%!important;
+  margin-top: 9%!important;
   animation: fumes 20s infinite;
 }
 .star li {
@@ -318,6 +357,56 @@ body {
   top: -2px;
   left: 2px;
 }
+
+
+@keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:.7; }
+  100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:.7; }
+  100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:.7; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:.7; }
+  100% { opacity:1; }
+}
+.loadingScreen {
+   -webkit-animation: flickerAnimation 3s infinite;
+   -moz-animation: flickerAnimation 3s infinite;
+   -o-animation: flickerAnimation 3s infinite;
+    animation: flickerAnimation 3s infinite;
+}
+
+@keyframes loadingTextAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:.4; }
+  100% { opacity:1; }
+}
+@-o-keyframes loadingTextAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:.4; }
+  100% { opacity:1; }
+}
+@-moz-keyframes loadingTextAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:.4; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes loadingTextAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:.4; }
+  100% { opacity:1; }
+}
+
 @keyframes fumes {
   50% {
     transform: scale(1.5);

@@ -15,56 +15,13 @@ namespace SatoshisCrypto.Models
     public string id { get; set; }
     public List<DogeComment> DogeComments { get; set; }
 
-    public static List<DogeComment> GetDogeComments4hr() 
+    public static List<DogeComment> GetDogeComments(string currency, int start) 
     {
-      var apiCallTask = ApiHelper.GetAllDoge4hr();
+      var apiCallTask = ApiHelper.GetAllForCurrency(currency, start);
       var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      List<DogeComment> DogeCommentList = JsonConvert.DeserializeObject<List<DogeComment>>(jsonResponse["data"].ToString());
-      return DogeCommentList;
-    }
-    public static List<DogeComment> GetDogeComments8hr() 
-
-    {
-      var apiCallTask = ApiHelper.GetAllDoge8hr();
-      var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      List<DogeComment> DogeCommentList = JsonConvert.DeserializeObject<List<DogeComment>>(jsonResponse["data"].ToString());
-      return DogeCommentList;
-    }
-    public static List<DogeComment> GetDogeComments12hr() 
-
-    {
-      var apiCallTask = ApiHelper.GetAllDoge12hr();
-      var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      List<DogeComment> DogeCommentList = JsonConvert.DeserializeObject<List<DogeComment>>(jsonResponse["data"].ToString());
-      return DogeCommentList;
-    }
-    public static List<DogeComment> GetDogeComments16hr()
-
-    {
-      var apiCallTask = ApiHelper.GetAllDoge16hr();
-      var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      List<DogeComment> DogeCommentList = JsonConvert.DeserializeObject<List<DogeComment>>(jsonResponse["data"].ToString());
-      return DogeCommentList;
-    }
-    public static List<DogeComment> GetDogeComments20hr()
-
-    {
-      var apiCallTask = ApiHelper.GetAllDoge20hr();
-      var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      List<DogeComment> DogeCommentList = JsonConvert.DeserializeObject<List<DogeComment>>(jsonResponse["data"].ToString());
-      return DogeCommentList;
-    }
-    public static List<DogeComment> GetDogeComments24hr() 
-
-    {
-      var apiCallTask = ApiHelper.GetAllDoge24hr();
-      var result = apiCallTask.Result;
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      // JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      // List<DogeComment> DogeCommentList = JsonConvert.DeserializeObject<List<DogeComment>>(jsonResponse["data"].ToString());
+      var jsonResponse = JsonConvert.DeserializeObject<dynamic>(result);
       List<DogeComment> DogeCommentList = JsonConvert.DeserializeObject<List<DogeComment>>(jsonResponse["data"].ToString());
       return DogeCommentList;
     }
