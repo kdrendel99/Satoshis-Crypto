@@ -11,7 +11,10 @@ namespace SatoshisCrypto.Models
       RestClient client = new RestClient("https://api.pushshift.io");
       RestRequest request = new RestRequest($"reddit/comment/search/?q={currency}&subreddit=cryptocurrency&after={start}h&before={(start-4)}h&size=100", Method.GET);
       var response = await client.ExecuteTaskAsync(request);
+ string responseContent = response.Content;
+         Console.WriteLine("HELLO WORLD"); // Console log the response content
 
+        Console.WriteLine("HELLO WORLD", responseContent); // Console log the response content
       return response.Content;
     }
 

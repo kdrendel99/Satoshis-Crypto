@@ -20,9 +20,17 @@ namespace SatoshisCrypto.Models
       var apiCallTask = ApiHelper.GetAllForCurrency(currency, start);
       var result = apiCallTask.Result;
 
-      var jsonResponse = JsonConvert.DeserializeObject<dynamic>(result);
-      List<BtcComment> BtcCommentList = JsonConvert.DeserializeObject<List<BtcComment>>(jsonResponse["data"].ToString());
+var jsonResponse = JsonConvert.DeserializeObject<dynamic>(result);
 
+List<BtcComment> BtcCommentList = null;
+if (jsonResponse != null && jsonResponse["data"] != null)
+{
+    BtcCommentList = JsonConvert.DeserializeObject<List<BtcComment>>(jsonResponse["data"].ToString());
+}
+
+Console.WriteLine(result); // Console log the raw JSON response
+
+return BtcCommentList;
       return BtcCommentList;
     }
   }
